@@ -24,29 +24,42 @@
     _webView = [[UIWebView alloc]init];
     _webView.frame = CGRectMake(0, 0, kWidth, kHeight - 50);
     _webView.delegate = self;
+    _webView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:_webView];
     //先加载一个本地的html
     NSString *path = [[NSBundle mainBundle] pathForResource:@"html/index" ofType:@"html"];
-    NSLog(@"%@",path);
+//    NSLog(@"%@",path);
     NSURL *url = [[NSURL alloc]initFileURLWithPath:path];
-    //    NSLog(@"%@",url);
+//    NSLog(@"%@",url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
     
     //创建两个原生button,演示调用js方法
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn1.frame = CGRectMake(0, kHeight - 50, kWidth/2 - 0.5, 50);
+//    btn1.frame = CGRectMake(0, kHeight - 50, kWidth/2 - 0.5, 50);
     btn1.backgroundColor = [UIColor blackColor];
     [btn1 setTitle:@"OC调用无参JS" forState:UIControlStateNormal];
     [btn1 addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
+    btn1.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:btn1];
     
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn2.frame = CGRectMake(kWidth/2 + 1, kHeight - 50, kWidth/2 - 0.5, 50);
+//    btn2.frame = CGRectMake(kWidth/2 + 1, kHeight - 50, kWidth/2 - 0.5, 50);
     btn2.backgroundColor = [UIColor blackColor];
     [btn2 setTitle:@"OC调用JS(传参)" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(function2) forControlEvents:UIControlEventTouchUpInside];
+    btn2.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:btn2];
+    
+    // AutoLayout
+    // align _webView from the left and right
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_webView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView)]];
+    // align _webView from the top and bottom
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-50-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView)]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[btn1]-1-[btn2(==btn1)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(btn1, btn2)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-0-[btn1]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView, btn1)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-0-[btn2]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView, btn2)]];
 }
 
 #pragma 供JS调用的方法
