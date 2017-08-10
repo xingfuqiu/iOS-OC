@@ -2,7 +2,7 @@
 //  ViewController.m
 //  JavaScriptCore
 //
-//  Created by XingfuQiu on 2017/8/9.
+//  Created by XingfuQiu on 2017/8/10.
 //  Copyright © 2017年 XingfuQiu. All rights reserved.
 //
 
@@ -27,7 +27,7 @@
     [self.view addSubview:_webView];
     //先加载一个本地的html
     NSString *path = [[NSBundle mainBundle] pathForResource:@"html/index" ofType:@"html"];
-        NSLog(@"%@",path);
+    NSLog(@"%@",path);
     NSURL *url = [[NSURL alloc]initFileURLWithPath:path];
     //    NSLog(@"%@",url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -99,7 +99,7 @@
     //1.直接调用
     NSString *alertJS=@"alert('test js OC')"; //准备执行的js代码
     [_context evaluateScript:alertJS];
- 
+    
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSLog(@"网页加载出错");
