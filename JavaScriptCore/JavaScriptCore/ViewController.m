@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"UIWebView";
     //创建一个webView来加载html
     _webView = [[UIWebView alloc]init];
     _webView.frame = CGRectMake(0, 0, kWidth, kHeight - 50);
@@ -34,32 +34,35 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
     
-    //创建两个原生button,演示调用js方法
-    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    //创建两个原生button,演示调用js方法
+//    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
 //    btn1.frame = CGRectMake(0, kHeight - 50, kWidth/2 - 0.5, 50);
-    btn1.backgroundColor = [UIColor blackColor];
-    [btn1 setTitle:@"OC调用无参JS" forState:UIControlStateNormal];
-    [btn1 addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
-    btn1.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:btn1];
-    
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    btn1.backgroundColor = [UIColor blackColor];
+//    [btn1 setTitle:@"OC调用无参JS" forState:UIControlStateNormal];
+//    [btn1 addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
+//    btn1.translatesAutoresizingMaskIntoConstraints = NO;
+//    [self.view addSubview:btn1];
+//    
+//    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
 //    btn2.frame = CGRectMake(kWidth/2 + 1, kHeight - 50, kWidth/2 - 0.5, 50);
-    btn2.backgroundColor = [UIColor blackColor];
-    [btn2 setTitle:@"OC调用JS(传参)" forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(function2) forControlEvents:UIControlEventTouchUpInside];
-    btn2.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:btn2];
+//    btn2.backgroundColor = [UIColor blackColor];
+//    [btn2 setTitle:@"OC调用JS(传参)" forState:UIControlStateNormal];
+//    [btn2 addTarget:self action:@selector(function2) forControlEvents:UIControlEventTouchUpInside];
+//    btn2.translatesAutoresizingMaskIntoConstraints = NO;
+//    [self.view addSubview:btn2];
     
+    UIBarButtonItem *btn1 = [[UIBarButtonItem alloc] initWithTitle:@"有参" style:UIBarButtonItemStylePlain target:self action:@selector(function1)];
+    UIBarButtonItem *btn2 = [[UIBarButtonItem alloc] initWithTitle:@"无参" style:UIBarButtonItemStylePlain target:self action:@selector(function2)];
+    [self navigationItem].rightBarButtonItems = [NSArray arrayWithObjects:btn1, btn2, nil];
     // AutoLayout
     // align _webView from the left and right
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_webView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView)]];
     // align _webView from the top and bottom
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-50-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView)]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[btn1]-1-[btn2(==btn1)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(btn1, btn2)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-0-[btn1]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView, btn1)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-0-[btn2]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView, btn2)]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[btn1]-1-[btn2(==btn1)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(btn1, btn2)]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-0-[btn1]-48-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView, btn1)]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_webView]-0-[btn2]-48-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_webView, btn2)]];
 }
 
 #pragma 供JS调用的方法
@@ -68,6 +71,11 @@
 }
 -(void)menthod2:(NSString *)str1 and:(NSString *)str2{
     NSLog(@"%@ %@",str1,str2);
+    
+    DetailsViewController *vc = [[DetailsViewController alloc] init];
+    vc.name = str1;
+    vc.age = str2;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma OC调用JS方法

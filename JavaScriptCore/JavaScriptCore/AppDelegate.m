@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarViewController.h"
+#import "ViewController.h"
+#import "WKViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,32 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _window.backgroundColor = [UIColor whiteColor];
+    [_window makeKeyAndVisible];
+    
+    NSArray *classArray = @[@"ViewController" , @"WKViewController"];
+    
+    NSArray *titleArray = @[@"UIWebView" , @"WKWebView"];
+    
+    NSMutableArray *ncArray = [NSMutableArray array];
+    
+    [classArray enumerateObjectsUsingBlock:^(id  _Nonnull class, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(class) alloc] init]];
+        
+        [ncArray addObject:nc];
+        
+        nc.tabBarItem.title = titleArray[idx];
+        nc.tabBarItem.image = [UIImage imageNamed:@"icon_play_button_press"];
+    }];
+    
+    TabBarViewController *tbc = [[TabBarViewController alloc] init];
+    
+    tbc.viewControllers = ncArray;
+    
+    self.window.rootViewController = tbc;
+    
     return YES;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailsViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
 @interface ViewController : UIViewController

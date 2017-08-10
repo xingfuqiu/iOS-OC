@@ -10,12 +10,14 @@
 		E6CACC1B1F3C392400E392C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC1A1F3C392400E392C6 /* main.m */; };
 		E6CACC1E1F3C392400E392C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC1D1F3C392400E392C6 /* AppDelegate.m */; };
 		E6CACC211F3C392400E392C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC201F3C392400E392C6 /* ViewController.m */; };
-		E6CACC241F3C392400E392C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CACC221F3C392400E392C6 /* Main.storyboard */; };
 		E6CACC261F3C392400E392C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6CACC251F3C392400E392C6 /* Assets.xcassets */; };
 		E6CACC291F3C392400E392C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CACC271F3C392400E392C6 /* LaunchScreen.storyboard */; };
 		E6CACC341F3C392400E392C6 /* JavaScriptCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC331F3C392400E392C6 /* JavaScriptCoreTests.m */; };
 		E6CACC3F1F3C392400E392C6 /* JavaScriptCoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC3E1F3C392400E392C6 /* JavaScriptCoreUITests.m */; };
 		E6CACC4D1F3C39FB00E392C6 /* html in Resources */ = {isa = PBXBuildFile; fileRef = E6CACC4C1F3C39FB00E392C6 /* html */; };
+		E6CACC501F3C53B000E392C6 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC4F1F3C53B000E392C6 /* DetailsViewController.m */; };
+		E6CACC541F3C5D5B00E392C6 /* WKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC531F3C5D5B00E392C6 /* WKViewController.m */; };
+		E6CACC581F3C618E00E392C6 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CACC571F3C618E00E392C6 /* TabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,6 @@
 		E6CACC1D1F3C392400E392C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E6CACC1F1F3C392400E392C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E6CACC201F3C392400E392C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E6CACC231F3C392400E392C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6CACC251F3C392400E392C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6CACC281F3C392400E392C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6CACC2A1F3C392400E392C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +54,12 @@
 		E6CACC3E1F3C392400E392C6 /* JavaScriptCoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JavaScriptCoreUITests.m; sourceTree = "<group>"; };
 		E6CACC401F3C392400E392C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6CACC4C1F3C39FB00E392C6 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		E6CACC4E1F3C53B000E392C6 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		E6CACC4F1F3C53B000E392C6 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		E6CACC521F3C5D5B00E392C6 /* WKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKViewController.h; sourceTree = "<group>"; };
+		E6CACC531F3C5D5B00E392C6 /* WKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKViewController.m; sourceTree = "<group>"; };
+		E6CACC561F3C618E00E392C6 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		E6CACC571F3C618E00E392C6 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +113,12 @@
 				E6CACC4C1F3C39FB00E392C6 /* html */,
 				E6CACC1C1F3C392400E392C6 /* AppDelegate.h */,
 				E6CACC1D1F3C392400E392C6 /* AppDelegate.m */,
-				E6CACC1F1F3C392400E392C6 /* ViewController.h */,
-				E6CACC201F3C392400E392C6 /* ViewController.m */,
-				E6CACC221F3C392400E392C6 /* Main.storyboard */,
+				E6CACC561F3C618E00E392C6 /* TabBarViewController.h */,
+				E6CACC571F3C618E00E392C6 /* TabBarViewController.m */,
+				E6CACC511F3C5D3900E392C6 /* UIWebView */,
+				E6CACC4E1F3C53B000E392C6 /* DetailsViewController.h */,
+				E6CACC551F3C5D6000E392C6 /* WKWebView */,
+				E6CACC4F1F3C53B000E392C6 /* DetailsViewController.m */,
 				E6CACC251F3C392400E392C6 /* Assets.xcassets */,
 				E6CACC271F3C392400E392C6 /* LaunchScreen.storyboard */,
 				E6CACC2A1F3C392400E392C6 /* Info.plist */,
@@ -141,6 +151,24 @@
 				E6CACC401F3C392400E392C6 /* Info.plist */,
 			);
 			path = JavaScriptCoreUITests;
+			sourceTree = "<group>";
+		};
+		E6CACC511F3C5D3900E392C6 /* UIWebView */ = {
+			isa = PBXGroup;
+			children = (
+				E6CACC1F1F3C392400E392C6 /* ViewController.h */,
+				E6CACC201F3C392400E392C6 /* ViewController.m */,
+			);
+			name = UIWebView;
+			sourceTree = "<group>";
+		};
+		E6CACC551F3C5D6000E392C6 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				E6CACC521F3C5D5B00E392C6 /* WKViewController.h */,
+				E6CACC531F3C5D5B00E392C6 /* WKViewController.m */,
+			);
+			name = WKWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +280,6 @@
 				E6CACC291F3C392400E392C6 /* LaunchScreen.storyboard in Resources */,
 				E6CACC4D1F3C39FB00E392C6 /* html in Resources */,
 				E6CACC261F3C392400E392C6 /* Assets.xcassets in Resources */,
-				E6CACC241F3C392400E392C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,9 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CACC541F3C5D5B00E392C6 /* WKViewController.m in Sources */,
 				E6CACC211F3C392400E392C6 /* ViewController.m in Sources */,
 				E6CACC1E1F3C392400E392C6 /* AppDelegate.m in Sources */,
 				E6CACC1B1F3C392400E392C6 /* main.m in Sources */,
+				E6CACC581F3C618E00E392C6 /* TabBarViewController.m in Sources */,
+				E6CACC501F3C53B000E392C6 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,14 +345,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E6CACC221F3C392400E392C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6CACC231F3C392400E392C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E6CACC271F3C392400E392C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -513,6 +535,7 @@
 				E6CACC451F3C392400E392C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6CACC461F3C392400E392C6 /* Build configuration list for PBXNativeTarget "JavaScriptCoreTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +544,7 @@
 				E6CACC481F3C392400E392C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6CACC491F3C392400E392C6 /* Build configuration list for PBXNativeTarget "JavaScriptCoreUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +553,7 @@
 				E6CACC4B1F3C392400E392C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
